@@ -1,4 +1,5 @@
 from google.adk.agents import Agent
+
 from bedira_manager.utilities.openFile import open_file
 
 instruction_text = open_file("obstacleClarifyingPrompt.md")

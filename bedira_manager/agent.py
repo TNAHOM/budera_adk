@@ -7,11 +7,13 @@ from google.adk.planners import BuiltInPlanner
 from google.genai import types
 
 prompt_text = open_file("rootAgentPrompt.md")
+global_instruction = open_file("globalInstruction.md")
 
 root_agent = Agent(
     name="bedira_manager",
     model="gemini-2.0-flash",
     description="Central orchestrator: routes clarification vs planning, integrates child outputs, prevents scope drift.",
+    global_instruction=global_instruction,
     instruction=prompt_text,
     sub_agents=[growth_agent, roadmap_agent],
     planner=BuiltInPlanner(
