@@ -4,6 +4,7 @@ from bedira_manager.utilities.openFile import open_file
 
 instruction_text = open_file("ClarifyingPrompt.md")
 
+#TODO: the agent must add critical obstacles missed by the growth agent 
 clarifying_agent = Agent(
     name="clarifying_agent",
     model="gemini-2.0-flash",
