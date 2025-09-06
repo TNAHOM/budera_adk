@@ -6,9 +6,9 @@ instruction_text = open_file("roadmapAgentPrompt.md")
 
 roadmap_agent = Agent(
     name="roadmapAgent",
-    model="gemini-2.0-flash",
+    model="gemini-2.5-flash",
     description=(
-        "Planner: turns clarified inputs into a prioritized, dependency-aware execution roadmap."
+        "Planner: converts clarified snapshot (incl. unknown/pre-revenue baselines) into a lean, dependency-aware execution roadmap tuned for a solo founder."
     ),
     instruction=instruction_text,
     sub_agents=[],

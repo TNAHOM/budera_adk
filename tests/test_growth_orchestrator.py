@@ -1,4 +1,4 @@
-from bedira_manager.sub_agents.growthAgent.orchestrator import orchestrate_growth_flow
+from tests.orchestrator import orchestrate_growth_flow
 
 
 class FakeAgent:
@@ -18,7 +18,9 @@ def test_orchestrator_approved_flow():
         assert "O1" in tasks_text
         return True
 
-    result = orchestrate_growth_flow(package, clarifier, obstacle_agent, user_confirm_callback=confirm_cb)
+    result = orchestrate_growth_flow(
+        package, clarifier, obstacle_agent, user_confirm_callback=confirm_cb
+    )
     assert result["status"] in ("approved", "confirmation_required")
     assert result["obstacle_tasks"] is not None
     assert result["clarifying_response"].startswith("STATUS:")

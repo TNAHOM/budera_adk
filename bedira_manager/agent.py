@@ -10,9 +10,9 @@ prompt_text = open_file("rootAgentPrompt.md")
 global_instruction = open_file("globalInstruction.md")
 
 root_agent = Agent(
-    name="bedira_manager",
-    model="gemini-2.0-flash",
-    description="Central orchestrator: routes clarification vs planning, integrates child outputs, prevents scope drift.",
+    name="budera_manager",
+    model="gemini-2.5-flash",
+    description="Budera: solopreneur companion & root orchestrator — captures core business + status, then delegates goals/obstacles to growth and planning to roadmap.",
     # global_instruction=global_instruction,
     instruction=prompt_text,
     sub_agents=[growth_agent, roadmap_agent],
